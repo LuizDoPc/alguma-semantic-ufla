@@ -1,0 +1,25 @@
+:DECLARACOES
+n:INTEIRO
+fi1:INTEIRO
+fi2:INTEIRO
+aux:INTEIRO
+
+:ALGORITMO
+LER n
+ATRIBUIR 0 A fi1
+ATRIBUIR 1 A fi2
+SE n != 0 ENTAO
+    INICIO
+        ENQUANTO n > 0
+            INICIO
+                ATRIBUIR fi1 A aux
+                ATRIBUIR fi2+fi1 A fi1
+                ATRIBUIR aux A fi2
+                ATRIBUIR n-1 A n
+            FIM
+        IMPRIMI fi2
+    FIM
+SENAO
+    IMPRIMI 0
+
+
