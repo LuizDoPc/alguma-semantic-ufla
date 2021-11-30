@@ -1,4 +1,4 @@
-// Generated from Alguma.g4 by ANTLR 4.9.3
+// Generated from Alguma.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -72,16 +72,14 @@ public class AlgumaBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitPreatribuicao(AlgumaParser.PreatribuicaoContext ctx) {
-		return visitChildren(ctx); 
-	}
+	@Override public T visitPreatribuicao(AlgumaParser.PreatribuicaoContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitAtribuicao(AlgumaParser.AtribuicaoContext ctx) {return visitChildren(ctx);}
+	@Override public T visitAtribuicao(AlgumaParser.AtribuicaoContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

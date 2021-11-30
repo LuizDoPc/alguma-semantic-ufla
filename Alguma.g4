@@ -7,7 +7,8 @@ algoritmo : acao*;
 declaracoes : declaracao*; 
 declaracao : ID Delim tipo;
 tipo : REA
-	   | INT;
+	   | INT
+	   | STR;
 	   
 acao : condicional | laco | preatribuicao | iooperacao;
 
@@ -51,6 +52,7 @@ COMENTARIO:'%'.*?[\n] -> skip;
 ALG: 'ALGORITMO';
 DEC: 'DECLARACOES';
 INT: 'INTEIRO';
+STR: 'STRING';
 REA: 'REAL';
 ATR: 'ATRIBUIR';
 LER: 'LER';

@@ -1,4 +1,4 @@
-// Generated from Alguma.g4 by ANTLR 4.9.3
+// Generated from Alguma.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,15 +10,15 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class AlgumaParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9.3", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		WS=1, COMENTARIO=2, ALG=3, DEC=4, INT=5, REA=6, ATR=7, LER=8, IMP=9, ENQ=10, 
-		SE=11, SEN=12, ENT=13, INI=14, FIM=15, A=16, ID=17, OpBool=18, OpArit=19, 
-		OpRel=20, AP=21, FP=22, Delim=23, NumI=24, NumR=25, Str=26;
+		WS=1, COMENTARIO=2, ALG=3, DEC=4, INT=5, STR=6, REA=7, ATR=8, LER=9, IMP=10, 
+		ENQ=11, SE=12, SEN=13, ENT=14, INI=15, FIM=16, A=17, ID=18, OpBool=19, 
+		OpArit=20, OpRel=21, AP=22, FP=23, Delim=24, NumI=25, NumR=26, Str=27;
 	public static final int
 		RULE_programa = 0, RULE_algoritmo = 1, RULE_declaracoes = 2, RULE_declaracao = 3, 
 		RULE_tipo = 4, RULE_acao = 5, RULE_iooperacao = 6, RULE_iooperador = 7, 
@@ -37,8 +37,8 @@ public class AlgumaParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, null, null, "'ALGORITMO'", "'DECLARACOES'", "'INTEIRO'", "'REAL'", 
-			"'ATRIBUIR'", "'LER'", "'IMPRIMI'", "'ENQUANTO'", "'SE'", "'SENAO'", 
+			null, null, null, "'ALGORITMO'", "'DECLARACOES'", "'INTEIRO'", "'STRING'", 
+			"'REAL'", "'ATRIBUIR'", "'LER'", "'IMPRIMI'", "'ENQUANTO'", "'SE'", "'SENAO'", 
 			"'ENTAO'", "'INICIO'", "'FIM'", "'A'", null, null, null, null, "'('", 
 			"')'", "':'"
 		};
@@ -46,9 +46,9 @@ public class AlgumaParser extends Parser {
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, "WS", "COMENTARIO", "ALG", "DEC", "INT", "REA", "ATR", "LER", "IMP", 
-			"ENQ", "SE", "SEN", "ENT", "INI", "FIM", "A", "ID", "OpBool", "OpArit", 
-			"OpRel", "AP", "FP", "Delim", "NumI", "NumR", "Str"
+			null, "WS", "COMENTARIO", "ALG", "DEC", "INT", "STR", "REA", "ATR", "LER", 
+			"IMP", "ENQ", "SE", "SEN", "ENT", "INI", "FIM", "A", "ID", "OpBool", 
+			"OpArit", "OpRel", "AP", "FP", "Delim", "NumI", "NumR", "Str"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -124,6 +124,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_programa; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterPrograma(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitPrograma(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitPrograma(this);
 			else return visitor.visitChildren(this);
@@ -188,6 +196,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_algoritmo; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterAlgoritmo(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitAlgoritmo(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitAlgoritmo(this);
 			else return visitor.visitChildren(this);
@@ -240,6 +256,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_declaracoes; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterDeclaracoes(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitDeclaracoes(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitDeclaracoes(this);
 			else return visitor.visitChildren(this);
@@ -291,6 +315,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_declaracao; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterDeclaracao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitDeclaracao(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitDeclaracao(this);
 			else return visitor.visitChildren(this);
@@ -325,10 +357,19 @@ public class AlgumaParser extends Parser {
 	public static class TipoContext extends ParserRuleContext {
 		public TerminalNode REA() { return getToken(AlgumaParser.REA, 0); }
 		public TerminalNode INT() { return getToken(AlgumaParser.INT, 0); }
+		public TerminalNode STR() { return getToken(AlgumaParser.STR, 0); }
 		public TipoContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_tipo; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterTipo(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitTipo(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitTipo(this);
@@ -345,7 +386,7 @@ public class AlgumaParser extends Parser {
 			{
 			setState(67);
 			_la = _input.LA(1);
-			if ( !(_la==INT || _la==REA) ) {
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << INT) | (1L << STR) | (1L << REA))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			else {
@@ -383,6 +424,14 @@ public class AlgumaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_acao; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterAcao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitAcao(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitAcao(this);
@@ -453,6 +502,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_iooperacao; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterIooperacao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitIooperacao(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitIooperacao(this);
 			else return visitor.visitChildren(this);
@@ -489,6 +546,14 @@ public class AlgumaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_iooperador; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterIooperador(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitIooperador(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitIooperador(this);
@@ -536,6 +601,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_preatribuicao; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterPreatribuicao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitPreatribuicao(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitPreatribuicao(this);
 			else return visitor.visitChildren(this);
@@ -578,6 +651,14 @@ public class AlgumaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_atribuicao; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterAtribuicao(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitAtribuicao(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitAtribuicao(this);
@@ -641,6 +722,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_condicional; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterCondicional(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitCondicional(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitCondicional(this);
 			else return visitor.visitChildren(this);
@@ -685,6 +774,14 @@ public class AlgumaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_condicionalfalso; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterCondicionalfalso(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitCondicionalfalso(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitCondicionalfalso(this);
@@ -736,6 +833,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_laco; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterLaco(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitLaco(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitLaco(this);
 			else return visitor.visitChildren(this);
@@ -780,6 +885,14 @@ public class AlgumaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_conteudo; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterConteudo(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitConteudo(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitConteudo(this);
@@ -844,6 +957,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_objeto; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterObjeto(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitObjeto(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitObjeto(this);
 			else return visitor.visitChildren(this);
@@ -902,6 +1023,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_num; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterNum(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitNum(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitNum(this);
 			else return visitor.visitChildren(this);
@@ -956,6 +1085,14 @@ public class AlgumaParser extends Parser {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_operacaoboleana; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterOperacaoboleana(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitOperacaoboleana(this);
+		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitOperacaoboleana(this);
@@ -1049,6 +1186,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_operacaoaritmetica; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterOperacaoaritmetica(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitOperacaoaritmetica(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitOperacaoaritmetica(this);
 			else return visitor.visitChildren(this);
@@ -1122,6 +1267,14 @@ public class AlgumaParser extends Parser {
 		}
 		@Override public int getRuleIndex() { return RULE_continuaoperacaoaritmetica; }
 		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).enterContinuaoperacaoaritmetica(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof AlgumaListener ) ((AlgumaListener)listener).exitContinuaoperacaoaritmetica(this);
+		}
+		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof AlgumaVisitor ) return ((AlgumaVisitor<? extends T>)visitor).visitContinuaoperacaoaritmetica(this);
 			else return visitor.visitChildren(this);
@@ -1163,7 +1316,7 @@ public class AlgumaParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\34\u009d\4\2\t\2"+
+		"\3\u608b\ua72a\u8133\ub9ed\u417c\u3be7\u7786\u5964\3\35\u009d\4\2\t\2"+
 		"\4\3\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13"+
 		"\t\13\4\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\4\20\t\20\4\21\t\21\4\22\t\22"+
 		"\4\23\t\23\4\24\t\24\3\2\3\2\3\2\3\2\3\2\3\2\7\2/\n\2\f\2\16\2\62\13\2"+
@@ -1175,33 +1328,33 @@ public class AlgumaParser extends Parser {
 		"\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\3\22\5\22\u008b\n\22"+
 		"\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\3\23\5\23\u0097\n\23\3\24"+
 		"\3\24\5\24\u009b\n\24\3\24\2\2\25\2\4\6\b\n\f\16\20\22\24\26\30\32\34"+
-		"\36 \"$&\2\5\3\2\7\b\3\2\n\13\3\2\32\33\2\u0098\2(\3\2\2\2\48\3\2\2\2"+
+		"\36 \"$&\2\5\3\2\7\t\3\2\13\f\3\2\33\34\2\u0098\2(\3\2\2\2\48\3\2\2\2"+
 		"\6>\3\2\2\2\bA\3\2\2\2\nE\3\2\2\2\fK\3\2\2\2\16M\3\2\2\2\20P\3\2\2\2\22"+
 		"R\3\2\2\2\24W\3\2\2\2\26\\\3\2\2\2\30d\3\2\2\2\32f\3\2\2\2\34o\3\2\2\2"+
 		"\36t\3\2\2\2 v\3\2\2\2\"\u008a\3\2\2\2$\u0096\3\2\2\2&\u009a\3\2\2\2("+
-		")\7\31\2\2)*\7\6\2\2*+\5\6\4\2+,\7\31\2\2,\60\7\5\2\2-/\5\f\7\2.-\3\2"+
+		")\7\32\2\2)*\7\6\2\2*+\5\6\4\2+,\7\32\2\2,\60\7\5\2\2-/\5\f\7\2.-\3\2"+
 		"\2\2/\62\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\63\3\2\2\2\62\60\3\2\2\2"+
 		"\63\64\7\2\2\3\64\3\3\2\2\2\65\67\5\f\7\2\66\65\3\2\2\2\67:\3\2\2\28\66"+
 		"\3\2\2\289\3\2\2\29\5\3\2\2\2:8\3\2\2\2;=\5\b\5\2<;\3\2\2\2=@\3\2\2\2"+
-		"><\3\2\2\2>?\3\2\2\2?\7\3\2\2\2@>\3\2\2\2AB\7\23\2\2BC\7\31\2\2CD\5\n"+
+		"><\3\2\2\2>?\3\2\2\2?\7\3\2\2\2@>\3\2\2\2AB\7\24\2\2BC\7\32\2\2CD\5\n"+
 		"\6\2D\t\3\2\2\2EF\t\2\2\2F\13\3\2\2\2GL\5\26\f\2HL\5\32\16\2IL\5\22\n"+
 		"\2JL\5\16\b\2KG\3\2\2\2KH\3\2\2\2KI\3\2\2\2KJ\3\2\2\2L\r\3\2\2\2MN\5\20"+
-		"\t\2NO\5\36\20\2O\17\3\2\2\2PQ\t\3\2\2Q\21\3\2\2\2RS\7\t\2\2ST\5\24\13"+
+		"\t\2NO\5\36\20\2O\17\3\2\2\2PQ\t\3\2\2Q\21\3\2\2\2RS\7\n\2\2ST\5\24\13"+
 		"\2T\23\3\2\2\2UX\5$\23\2VX\5\36\20\2WU\3\2\2\2WV\3\2\2\2XY\3\2\2\2YZ\7"+
-		"\22\2\2Z[\7\23\2\2[\25\3\2\2\2\\]\7\r\2\2]^\5\"\22\2^_\7\17\2\2_`\5\34"+
-		"\17\2`a\5\30\r\2a\27\3\2\2\2bc\7\16\2\2ce\5\34\17\2db\3\2\2\2de\3\2\2"+
-		"\2e\31\3\2\2\2fg\7\f\2\2gh\5\"\22\2hi\5\34\17\2i\33\3\2\2\2jk\7\20\2\2"+
-		"kl\5\4\3\2lm\7\21\2\2mp\3\2\2\2np\5\f\7\2oj\3\2\2\2on\3\2\2\2p\35\3\2"+
-		"\2\2qu\7\23\2\2ru\5 \21\2su\7\34\2\2tq\3\2\2\2tr\3\2\2\2ts\3\2\2\2u\37"+
-		"\3\2\2\2vw\t\4\2\2w!\3\2\2\2xy\5\36\20\2yz\7\26\2\2z{\5\36\20\2{\u008b"+
-		"\3\2\2\2|}\7\27\2\2}~\5\36\20\2~\177\7\26\2\2\177\u0080\5\36\20\2\u0080"+
-		"\u0081\7\30\2\2\u0081\u008b\3\2\2\2\u0082\u0083\7\27\2\2\u0083\u0084\5"+
-		"\36\20\2\u0084\u0085\7\26\2\2\u0085\u0086\5\36\20\2\u0086\u0087\7\30\2"+
-		"\2\u0087\u0088\7\24\2\2\u0088\u0089\5\"\22\2\u0089\u008b\3\2\2\2\u008a"+
+		"\23\2\2Z[\7\24\2\2[\25\3\2\2\2\\]\7\16\2\2]^\5\"\22\2^_\7\20\2\2_`\5\34"+
+		"\17\2`a\5\30\r\2a\27\3\2\2\2bc\7\17\2\2ce\5\34\17\2db\3\2\2\2de\3\2\2"+
+		"\2e\31\3\2\2\2fg\7\r\2\2gh\5\"\22\2hi\5\34\17\2i\33\3\2\2\2jk\7\21\2\2"+
+		"kl\5\4\3\2lm\7\22\2\2mp\3\2\2\2np\5\f\7\2oj\3\2\2\2on\3\2\2\2p\35\3\2"+
+		"\2\2qu\7\24\2\2ru\5 \21\2su\7\35\2\2tq\3\2\2\2tr\3\2\2\2ts\3\2\2\2u\37"+
+		"\3\2\2\2vw\t\4\2\2w!\3\2\2\2xy\5\36\20\2yz\7\27\2\2z{\5\36\20\2{\u008b"+
+		"\3\2\2\2|}\7\30\2\2}~\5\36\20\2~\177\7\27\2\2\177\u0080\5\36\20\2\u0080"+
+		"\u0081\7\31\2\2\u0081\u008b\3\2\2\2\u0082\u0083\7\30\2\2\u0083\u0084\5"+
+		"\36\20\2\u0084\u0085\7\27\2\2\u0085\u0086\5\36\20\2\u0086\u0087\7\31\2"+
+		"\2\u0087\u0088\7\25\2\2\u0088\u0089\5\"\22\2\u0089\u008b\3\2\2\2\u008a"+
 		"x\3\2\2\2\u008a|\3\2\2\2\u008a\u0082\3\2\2\2\u008b#\3\2\2\2\u008c\u008d"+
-		"\5\36\20\2\u008d\u008e\7\25\2\2\u008e\u008f\5&\24\2\u008f\u0097\3\2\2"+
-		"\2\u0090\u0091\7\27\2\2\u0091\u0092\5\36\20\2\u0092\u0093\7\25\2\2\u0093"+
-		"\u0094\5&\24\2\u0094\u0095\7\30\2\2\u0095\u0097\3\2\2\2\u0096\u008c\3"+
+		"\5\36\20\2\u008d\u008e\7\26\2\2\u008e\u008f\5&\24\2\u008f\u0097\3\2\2"+
+		"\2\u0090\u0091\7\30\2\2\u0091\u0092\5\36\20\2\u0092\u0093\7\26\2\2\u0093"+
+		"\u0094\5&\24\2\u0094\u0095\7\31\2\2\u0095\u0097\3\2\2\2\u0096\u008c\3"+
 		"\2\2\2\u0096\u0090\3\2\2\2\u0097%\3\2\2\2\u0098\u009b\5$\23\2\u0099\u009b"+
 		"\5\36\20\2\u009a\u0098\3\2\2\2\u009a\u0099\3\2\2\2\u009b\'\3\2\2\2\r\60"+
 		"8>KWdot\u008a\u0096\u009a";
