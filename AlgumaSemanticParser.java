@@ -3,6 +3,7 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 import org.antlr.v4.runtime.tree.ParseTree;
+import org.antlr.v4.runtime.tree.TerminalNodeImpl;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +26,24 @@ public class AlgumaSemanticParser<T> extends AlgumaBaseVisitor<T> {
         return visitChildren(ctx);
     }
 
+   
+
+    @Override public T visitObjeto(AlgumaParser.ObjetoContext ctx){
+        if (ctx.getChild(0).getClass() == org.antlr.v4.runtime.tree.TerminalNodeImpl.class && !ctx.getChild(0).getText().contains("'")){
+            verificaVariaveisNaoDeclaradas(ctx.getChild(0).getText());
+        }
+        return visitChildren(ctx);
+    }
+
+    //2) Checagem de variáveis não declaradas
+    private void verificaVariaveisNaoDeclaradas(String id){
+        if (!symbolTable.containsKey(id)){
+            System.out.println("Uso de variável não declarada! Variável " + id + " não foi declarada");
+            throw new Error("Undeclared var");
+        }
+
+    }
+
     private void validaValorDestino(String tipoValor, String tipoDestino, String valor){
         if(tipoValor != null){ // atribuicao de variavel
             if(!tipoValor.equals(tipoDestino)){
@@ -32,8 +51,12 @@ public class AlgumaSemanticParser<T> extends AlgumaBaseVisitor<T> {
                 throw new Error("Incompatible types");
             }
         }else{ // atribuicao de valor
-            if(valor.contains("'")){
-                System.out.println("Variáveis não podem conter strings");
+            if(tipoDestino.equals("INTEIRO") && valor.contains("'")){
+                System.out.println("Não é possível atribuir uma STRING a um INTERIO");
+                throw new Error("Incompatible types");
+            }
+            else if(tipoDestino.equals("REAL") && valor.contains("'")){
+                System.out.println("Não é possível atribuir uma STRING a um REAL");
                 throw new Error("Incompatible types");
             }
             if(tipoDestino.equals("INTEIRO") && valor.contains(",")){
@@ -58,6 +81,7 @@ public class AlgumaSemanticParser<T> extends AlgumaBaseVisitor<T> {
         if(ctx.getChild(0).getChildCount() == 1){
             String tipoValor = symbolTable.get(valor);
 
+            verificaVariaveisNaoDeclaradas(destino);
             validaValorDestino(tipoValor, tipoDestino, valor);
 
         }else{ 
