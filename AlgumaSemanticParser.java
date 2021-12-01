@@ -1,7 +1,3 @@
-import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.tree.ErrorNode;
-import org.antlr.v4.runtime.tree.TerminalNode;
-import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.antlr.v4.runtime.tree.TerminalNodeImpl;
 
@@ -16,7 +12,6 @@ public class AlgumaSemanticParser<T> extends AlgumaBaseVisitor<T> {
    	@Override public T visitDeclaracao(AlgumaParser.DeclaracaoContext ctx) {
         String tipo = ctx.getChild(2).getText();
         String id = ctx.getChild(0).getText();
-
         if (symbolTable.containsKey(id)){
             System.out.println("Declaração duplicada! Variável " + id + " já declarada");
             throw new Error("Duplicated var");
@@ -29,7 +24,8 @@ public class AlgumaSemanticParser<T> extends AlgumaBaseVisitor<T> {
    
 
     @Override public T visitObjeto(AlgumaParser.ObjetoContext ctx){
-        if (ctx.getChild(0).getClass() == org.antlr.v4.runtime.tree.TerminalNodeImpl.class && !ctx.getChild(0).getText().contains("'")){
+        if (ctx.getChild(0).getClass() == org.antlr.v4.runtime.tree.TerminalNodeImpl.class 
+        && !ctx.getChild(0).getText().contains("'")){
             verificaVariaveisNaoDeclaradas(ctx.getChild(0).getText());
         }
         return visitChildren(ctx);
